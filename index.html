@@ -22,6 +22,9 @@
                 </div>
                 <h1>MURILO RODRIGUES</h1>
                 <p class="subtitle">Desenvolvedor de Software</p>
+                <button class="btn-download" id="downloadPDF">
+                    <i class="fas fa-download"></i> Baixar Currículo em PDF
+                </button>
             </div>
             <div class="contact-info">
                 <div class="contact-item">
@@ -99,6 +102,59 @@
                 <p class="company">IFRS Campus Canoas</p>
                 <p class="period">07/2021 – 01/2022</p>
                 <p class="description">Apoio a alunos, resolução de exercícios e fundamentos de programação.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-project-diagram"></i> Projetos</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Production Optimizer</h3>
+                    <p class="project-description">Sistema de otimização de produção com análise de dados e gestão eficiente.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python <span class="tech-percentage">85%</span></span>
+                        <span class="tech-tag">JavaScript <span class="tech-percentage">10%</span></span>
+                        <span class="tech-tag">HTML <span class="tech-percentage">5%</span></span>
+                    </div>
+                    <a href="https://github.com/Murilor16/production-optimizer" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> Ver no GitHub
+                    </a>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Currículo Online</h3>
+                    <p class="project-description">Site responsivo com modo escuro, animações e integração com GitHub.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">CSS <span class="tech-percentage">45%</span></span>
+                        <span class="tech-tag">JavaScript <span class="tech-percentage">35%</span></span>
+                        <span class="tech-tag">HTML <span class="tech-percentage">20%</span></span>
+                    </div>
+                    <a href="https://github.com/Murilor16/CurriculoOnlineMr" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> Ver no GitHub
+                    </a>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Desenvolvimento Web</h3>
+                    <p class="project-description">Projetos envolvendo PHP, MySQL e desenvolvimento full-stack.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">PHP <span class="tech-percentage">60%</span></span>
+                        <span class="tech-tag">JavaScript <span class="tech-percentage">25%</span></span>
+                        <span class="tech-tag">CSS <span class="tech-percentage">15%</span></span>
+                    </div>
+                    <a href="https://github.com/Murilor16" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> Ver repositórios
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -184,5 +240,6 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </body>
 </html>

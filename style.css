@@ -598,6 +598,128 @@ body {
     font-size: 1.2em;
 }
 
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--shadow-hover);
+    border-color: var(--accent-color);
+}
+
+.project-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--header-bg);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8em;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover .project-icon {
+    background: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.project-card h3 {
+    color: var(--text-color);
+    font-size: 1.3em;
+    margin: 0;
+}
+
+.project-description {
+    color: var(--text-secondary);
+    font-size: 0.95em;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech-tag {
+    background: var(--header-bg);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.85em;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.tech-percentage {
+    opacity: 0.8;
+    font-size: 0.9em;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+}
+
+.project-link:hover {
+    gap: 12px;
+    opacity: 0.8;
+}
+
+.btn-download {
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    color: var(--header-bg);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-download:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    background: var(--accent-color);
+    color: white;
+}
+
+.btn-download i {
+    font-size: 1.1em;
+}
+
 .footer {
     background: var(--header-bg);
     color: var(--footer-text);

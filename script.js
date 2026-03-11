@@ -193,4 +193,30 @@ document.addEventListener('DOMContentLoaded', function() {
     skillItems.forEach((item, index) => {
         item.style.animationDelay = `${index * 0.1}s`;
     });
+
+    const downloadBtn = document.getElementById('downloadPDF');
+    downloadBtn.addEventListener('click', function() {
+        const element = document.querySelector('.container');
+        const themeToggle = document.getElementById('themeToggle');
+        const canvas = document.getElementById('backgroundCanvas');
+        const downloadButton = document.getElementById('downloadPDF');
+        
+        themeToggle.style.display = 'none';
+        canvas.style.display = 'none';
+        downloadButton.style.display = 'none';
+        
+        const opt = {
+            margin: 10,
+            filename: 'Curriculo_Murilo_Rodrigues.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2, useCORS: true },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        };
+        
+        html2pdf().set(opt).from(element).save().then(() => {
+            themeToggle.style.display = 'flex';
+            canvas.style.display = 'block';
+            downloadButton.style.display = 'inline-flex';
+        });
+    });
 });
