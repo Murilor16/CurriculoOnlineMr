@@ -744,32 +744,82 @@ body.dark-mode .project-card:hover {
 }
 
 .btn-download {
-    margin-top: 20px;
-    display: inline-flex;
+    position: fixed;
+    right: 20px;
+    bottom: 80px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 10px;
-    background: white;
-    color: var(--header-bg);
-    padding: 12px 24px;
+    gap: 8px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 16px;
     border: none;
-    border-radius: 6px;
+    border-radius: 50%;
     cursor: pointer;
     font-weight: 600;
-    font-size: 1em;
-    transition: all 0.3s ease;
+    font-size: 1.5em;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+    z-index: 999;
+    width: 60px;
+    height: 60px;
+    justify-content: center;
 }
 
 .btn-download:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    background: var(--accent-color);
-    color: white;
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 8px 30px rgba(102, 126, 234, 0.6);
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.btn-download:active {
+    transform: translateY(-3px) scale(1.05);
 }
 
 .btn-download i {
-    font-size: 1.1em;
+    font-size: 1.2em;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.btn-download-text {
+    display: none;
+    position: absolute;
+    right: 75px;
+    background: var(--header-bg);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-download:hover .btn-download-text {
+    display: block;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .footer {
@@ -792,6 +842,18 @@ body.dark-mode .project-card:hover {
         width: 45px;
         height: 45px;
         font-size: 1em;
+    }
+
+    .btn-download {
+        right: 10px;
+        bottom: 70px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.2em;
+    }
+
+    .btn-download-text {
+        display: none !important;
     }
 
     .header {
