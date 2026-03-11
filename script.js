@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Carregar README do GitHub
     async function loadGitHubReadme() {
         const readmeContainer = document.getElementById('readme-content');
         try {
@@ -8,27 +7,17 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const markdown = await response.text();
             
-            // Converter Markdown básico para HTML
             let html = markdown
-                // Headers
                 .replace(/^### (.*$)/gim, '<h3>$1</h3>')
                 .replace(/^## (.*$)/gim, '<h2>$1</h2>')
                 .replace(/^# (.*$)/gim, '<h1>$1</h1>')
-                // Bold
                 .replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>')
-                // Italic
                 .replace(/\*(.*?)\*/gim, '<em>$1</em>')
-                // Links
                 .replace(/\[([^\]]+)\]\(([^\)]+)\)/gim, '<a href="$2" target="_blank">$1</a>')
-                // Images
                 .replace(/!\[([^\]]+)\]\(([^\)]+)\)/gim, '<img src="$2" alt="$1" class="readme-img">')
-                // Line breaks
                 .replace(/\n\n/gim, '</p><p>')
-                // Code blocks
                 .replace(/```([\s\S]*?)```/gim, '<pre><code>$1</code></pre>')
-                // Inline code
                 .replace(/`([^`]+)`/gim, '<code>$1</code>')
-                // Lists
                 .replace(/^\- (.*$)/gim, '<li>$1</li>')
                 .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
             
@@ -46,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     loadGitHubReadme();
 
-    // Expandir/Recolher README
     const expandBtn = document.getElementById('expandReadme');
     const readmeContent = document.getElementById('readme-content');
     
@@ -67,7 +55,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Background Animation
     const canvas = document.getElementById('backgroundCanvas');
     const ctx = canvas.getContext('2d');
     let particles = [];
@@ -154,12 +141,10 @@ document.addEventListener('DOMContentLoaded', function() {
         initParticles();
     });
 
-    // Theme Toggle
     const themeToggle = document.getElementById('themeToggle');
     const body = document.body;
     const icon = themeToggle.querySelector('i');
     
-    // Verificar preferência salva
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
         body.classList.add('dark-mode');
@@ -181,7 +166,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Animações de scroll
     const sections = document.querySelectorAll('.section');
     
     const observerOptions = {
