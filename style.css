@@ -895,15 +895,244 @@ body.dark-mode .project-card:hover {
     body {
         background: white;
         padding: 0;
+        color: #000;
+        font-size: 12pt;
+        line-height: 1.35;
     }
 
     .container {
         box-shadow: none;
         border-radius: 0;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    #backgroundCanvas,
+    .theme-toggle,
+    .btn-download {
+        display: none !important;
+    }
+
+    .section {
+        animation: none;
+        transform: none;
+        opacity: 1 !important;
+        padding: 14px 18px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .readme-container {
+        max-height: none !important;
+        padding: 20px !important;
+        margin-bottom: 20px !important;
+        opacity: 1 !important;
+        overflow: visible !important;
     }
 
     .skill-item:hover, .education-item:hover, .experience-item:hover, .info-tag:hover {
         transform: none;
         box-shadow: none;
+    }
+
+    /* PDF mais formal: remover "cara de site" */
+    * {
+        text-shadow: none !important;
+        filter: none !important;
+    }
+
+    a {
+        color: #000 !important;
+        text-decoration: none !important;
+    }
+
+    /* Cabeçalho como currículo */
+    .header {
+        background: #fff !important;
+        color: #000 !important;
+        padding: 18px 18px 10px;
+        text-align: left;
+        border-bottom: 2px solid #000;
+    }
+
+    .profile-photo {
+        animation: none;
+        box-shadow: none;
+        border: none;
+        width: 90px;
+        height: 90px;
+        margin: 0 0 10px 0;
+    }
+
+    .header h1 {
+        color: #000 !important;
+        letter-spacing: 1px;
+        font-size: 22pt;
+        margin-bottom: 4px;
+    }
+
+    .subtitle {
+        color: #000 !important;
+        opacity: 1;
+        font-size: 12pt;
+        margin-bottom: 8px;
+    }
+
+    .contact-info {
+        justify-content: flex-start;
+        gap: 10px 18px;
+        margin-top: 8px;
+    }
+
+    .contact-item {
+        font-size: 10.5pt;
+    }
+
+    /* Remove ícones (ficam bons no site, poluem no PDF) */
+    .header i,
+    .section h2 i,
+    .contact-item i,
+    .project-icon,
+    .skill-item i,
+    .info-tag i,
+    .project-link i,
+    .btn-github i {
+        display: none !important;
+    }
+
+    .section h2 {
+        color: #000 !important;
+        font-size: 13pt;
+        margin-bottom: 8px;
+        gap: 0;
+    }
+
+    .section p,
+    .description,
+    .institution,
+    .company,
+    .status,
+    .period,
+    .project-description {
+        color: #000 !important;
+        text-align: left;
+    }
+
+    /* Esconde controles/links "de site" no PDF */
+    .readme-header,
+    .github-link {
+        display: none !important;
+    }
+
+    /* Esconde completamente a seção "Sobre Mim" (README) no PDF */
+    .section:nth-of-type(2) {
+        display: none !important;
+    }
+
+    /* Blocos sem cartões/hover */
+    .education-item,
+    .experience-item,
+    .project-card {
+        background: transparent !important;
+        border: none !important;
+        border-left: none !important;
+        padding: 0 !important;
+        margin: 0 0 10px 0;
+        box-shadow: none !important;
+        transform: none !important;
+        border-radius: 0 !important;
+    }
+
+    .education-item h3,
+    .experience-item h3,
+    .project-card h3 {
+        color: #000 !important;
+        font-size: 11.5pt;
+        margin-bottom: 2px;
+    }
+
+    .status,
+    .period {
+        font-style: normal;
+        font-size: 10pt;
+        margin-bottom: 4px;
+    }
+
+    /* Projetos em lista simples */
+    .projects-grid {
+        display: block;
+        gap: 0;
+        margin-top: 0;
+    }
+
+    .project-tech {
+        display: none !important;
+    }
+
+    .tech-tag {
+        background: transparent !important;
+        color: #000 !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+        display: inline;
+        margin-right: 10px;
+        font-weight: 600;
+    }
+
+    /* Link do projeto em estilo simples de currículo */
+    .project-link {
+        display: block;
+        padding: 0;
+        margin-top: 2px;
+        border: none;
+        background: none;
+        box-shadow: none;
+        color: #000 !important;
+        text-decoration: underline !important;
+        font-size: 10pt;
+        align-self: flex-start;
+    }
+
+    .tech-percentage {
+        opacity: 1;
+        font-weight: 600;
+    }
+
+    /* Competências em colunas */
+    .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 6px 18px;
+    }
+
+    .skill-item {
+        background: transparent !important;
+        color: #000 !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+    }
+
+    /* Infos adicionais como lista simples */
+    .additional-info {
+        gap: 6px 18px;
+    }
+
+    .info-tag {
+        background: transparent !important;
+        color: #000 !important;
+        border: none !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        font-weight: 400;
+    }
+
+    .footer {
+        background: transparent !important;
+        color: #000 !important;
+        padding: 12px 18px;
+        border-top: 1px solid #ddd;
+        text-align: left;
     }
 }
