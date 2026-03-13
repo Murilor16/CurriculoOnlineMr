@@ -570,6 +570,18 @@ body {
     gap: 15px;
 }
 
+.skills-section-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.skills-group h3 {
+    color: var(--section-title);
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
 .skill-item {
     background: var(--header-bg);
     color: white;
