@@ -290,20 +290,30 @@ body {
 
 .timeline {
     position: relative;
+    padding-left: 140px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 115px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border-color);
 }
 
 .timeline-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
+    position: relative;
     margin-bottom: 30px;
 }
 
 .timeline-date {
-    flex-shrink: 0;
+    position: absolute;
+    left: -130px;
+    top: 5px;
     width: 120px;
     text-align: right;
-    padding-right: 15px;
     color: var(--text-muted);
     font-weight: 600;
     font-size: 0.9em;
@@ -314,18 +324,29 @@ body {
 }
 
 .timeline-marker {
-    flex-shrink: 0;
-    width: 12px;
-    height: 12px;
+    position: absolute;
+    left: -25px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
     background: var(--header-bg);
     border-radius: 50%;
     border: 2px solid var(--bg-color);
-    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse 3s infinite;
+}
+
+.timeline-marker::before {
+    content: '\f0b1';
+    font-family: 'Font Awesome';
+    color: white;
+    font-size: 8px;
 }
 
 .timeline-content {
-    flex: 1;
-    padding: 15px;
+    padding: 20px;
     background: var(--card-bg);
     border-radius: 6px;
     border-left: 3px solid var(--header-bg);
@@ -347,13 +368,13 @@ body {
 /* Certificados */
 .certificates-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 20px;
 }
 
 .certificate-item {
     background: var(--card-bg);
-    padding: 20px;
+    padding: 25px;
     border-radius: 8px;
     border: 1px solid var(--border-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -1215,7 +1236,7 @@ body.dark-mode .project-card:hover {
     }
 
     .section {
-        padding: 20px;
+        padding: 20px 10px;
     }
 
     .section h2 {
@@ -1239,33 +1260,100 @@ body.dark-mode .project-card:hover {
     }
 
     .certificates-grid {
-        grid-template-columns: 1fr;
+        display: block;
+    }
+
+    .certificate-item {
+        padding: 20px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        margin-bottom: 20px;
+        max-width: 100%;
+    }
+
+    .certificate-item h3 {
+        font-size: 1.1em;
     }
 
     /* Mobile timeline adjustments */
     .timeline {
-        max-width: 100%;
-        padding: 20px 10px;
+        padding-left: 0;
     }
 
     .timeline::before {
-        left: 20px;
-        transform: none;
+        left: 15px;
+    }
+
+    .timeline-date {
+        left: -40px;
+        width: 30px;
+        font-size: 0.7em;
+        padding: 2px 5px;
+        text-align: right;
+    }
+
+    .timeline-marker {
+        left: -25px;
+    }
+
+    .timeline-content {
+        padding: 15px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        text-align: center;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline {
+        padding-left: 0;
+    }
+
+    .timeline::before {
+        display: none;
     }
 
     .timeline-item {
+        position: static;
+        margin-bottom: 20px;
+    }
+
+    .timeline-date {
+        position: static;
         width: 100%;
-        left: 0 !important;
-        text-align: left !important;
-        padding-left: 40px;
+        text-align: center;
+        margin-bottom: 10px;
     }
 
-    .timeline-item::before {
-        left: 11px;
-    }
-
-    .timeline-content::before {
+    .timeline-marker {
         display: none;
+    }
+
+    .timeline-content {
+        border-left: none;
+        padding: 15px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .timeline-date {
+        font-size: 0.8em;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
     }
 }
 
