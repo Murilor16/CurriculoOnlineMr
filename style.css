@@ -420,6 +420,34 @@ body {
     color: var(--text-color);
 }
 
+/* GitHub Stats */
+.github-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.stats-item {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stats-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow-hover);
+}
+
+.stats-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
 /* Timeline */
 .timeline {
     position: relative;
@@ -1273,6 +1301,10 @@ body.dark-mode .project-card:hover {
 
     .certificate-item h3 {
         font-size: 1.1em;
+    }
+
+    .github-stats-grid {
+        grid-template-columns: 1fr;
     }
 
     /* Mobile timeline adjustments */
