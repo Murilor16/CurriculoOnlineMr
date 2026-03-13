@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     async function loadGitHubReadme() {
         const readmeContainer = document.getElementById('readme-content');
         try {
-            const response = await fetch('https://raw.githubusercontent.com/Murilor16/MuriloRodrigues-README-/main/README.md');
+          const response = await fetch('https://raw.githubusercontent.com/Murilor16/Murilor16/main/README.md');
             if (!response.ok) throw new Error('Erro ao carregar README');
             
             const markdown = await response.text();
